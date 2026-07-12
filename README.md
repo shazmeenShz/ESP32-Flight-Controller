@@ -4,7 +4,7 @@
   <img src="3D_front.png" width="700">
 </p>
 
-> A custom 4-layer ESP32-based Flight Controller designed in KiCad 8 for UAV and robotics applications.
+> A custom 4-layer IoT-ready ESP32-based Flight Controller designed in KiCad 8 for UAV and robotics applications.
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![KiCad](https://img.shields.io/badge/KiCad-8.0-blue)
@@ -15,15 +15,29 @@
 
 # Overview
 
-This project is a custom-designed **4-layer Flight Controller PCB** based on the **ESP32-WROOM-32E** module. The controller integrates power management, sensor interfaces, USB programming, battery monitoring, and communication peripherals into a compact PCB suitable for drone and embedded robotics applications.
+This project is a custom-designed 4-layer ESP32-based Flight Controller PCB developed in KiCad 8. Built around the ESP32-WROOM-32E, the board integrates power management, sensor interfaces, USB programming, and wireless connectivity capabilities, making it suitable for UAVs, robotics, and IoT-enabled embedded systems.
 
-The board was designed entirely in **KiCad 8**, following industry-standard PCB design practices including dedicated power and ground planes, proper decoupling, RF antenna keep-out, and comprehensive Design Rule Checking (DRC).
+The design follows industry-standard PCB practices, including dedicated ground and power planes, RF antenna keep-out, proper decoupling, and comprehensive Design Rule Checking (DRC), resulting in a manufacturing-ready hardware platform.
+
+---
+
+# Applications
+
+- UAV & Drone Flight Controllers
+- IoT-enabled Robotics
+- Wireless Sensor Nodes
+- Remote Monitoring Systems
+- Autonomous Embedded Platforms
+- Research & Academic Projects
+- Rapid Prototyping for Embedded Systems
 
 ---
 
 # Features
 
 - ESP32-WROOM-32E Microcontroller
+- Wi-Fi & Bluetooth Enabled (ESP32)
+- IoT-Ready Embedded Hardware Platform
 - 4-Layer PCB Design
 - USB Type-C Programming Interface
 - CH340C USB-to-UART Converter
@@ -260,5 +274,3 @@ Jamia Millia Islamia
 This project is released under the **MIT License**.
 
 ---
-
-## If you found this project helpful, consider giving it a ⭐ on GitHub.
