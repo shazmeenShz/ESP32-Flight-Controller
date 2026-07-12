@@ -1,5 +1,9 @@
 # ESP32 Flight Controller
 
+<p align="center">
+  <img src="3D_front.png" width="700">
+</p>
+
 > A custom 4-layer ESP32-based Flight Controller designed in KiCad 8 for UAV and robotics applications.
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -191,27 +195,28 @@ ESP32-Flight-Controller
 
 # Images
 
-## PCB Top
+## PCB Layout
 
-> *(Add PCB Top Screenshot Here)*
-
----
-
-## PCB Bottom
-
-> *(Add PCB Bottom Screenshot Here)*
+<p align="center">
+  <img src="pcb.png" width="80%">
+</p>
 
 ---
 
 ## 3D View
 
-> *(Add 3D Render Here)*
+<p align="center">
+  <img src="3D_front.png" width="48%">
+  <img src="3D_back.png" width="48%">
+</p>
 
 ---
 
 ## Schematic
 
-> *(Add Schematic Screenshot Here)*
+<p align="center">
+  <img src="schematic.png" width="95%">
+</p>
 
 ---
 
