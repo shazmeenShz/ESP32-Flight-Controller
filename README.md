@@ -297,7 +297,11 @@ Rev 2 is the second hardware revision of the ESP32 Flight Controller. The comple
 
 ### Manufacturing Support
 
-The Rev 2 PCB was manufactured with support from **NextPCB** through their project sponsorship program.
+A sincere thank you to NextPCB for supporting the manufacturing of the Rev 2 PCB.
+
+Their support helped me take the design from KiCad to a professionally manufactured board and continue the hands-on testing and development of the project.
+
+I truly appreciate NextPCB for supporting student-led, open-source hardware projects and making opportunities like this possible.
 
 **Manufacturing Partner:** NextPCB  
 **Sponsored Revision:** Rev 2
