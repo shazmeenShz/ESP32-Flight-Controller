@@ -274,3 +274,42 @@ Jamia Millia Islamia
 This project is released under the **MIT License**.
 
 ---
+
+---
+
+# Hardware Revisions
+
+## Rev 1
+
+The original ESP32 Flight Controller hardware design is maintained in the root of this repository. It represents the first manufactured prototype of the project.
+
+## Rev 2
+
+Rev 2 is the second hardware revision of the ESP32 Flight Controller. The complete Rev 2 design and manufacturing files are provided under the `Rev2/` directory.
+
+### Rev 2 Contents
+
+- KiCad schematic and PCB design files
+- Gerber manufacturing files
+- Bill of Materials (BOM)
+- Drill files and manufacturing documentation
+- PCB images and photographs
+
+### Manufacturing Support
+
+The Rev 2 PCB was manufactured with support from **NextPCB** through their project sponsorship program.
+
+**Manufacturing Partner:** NextPCB  
+**Sponsored Revision:** Rev 2
+
+---
+
+## Rev 2 Repository Structure
+
+```text
+Rev2/
+├── KiCad/
+├── Gerbers/
+├── BOM/
+├── Documentation/
+└── Images/
