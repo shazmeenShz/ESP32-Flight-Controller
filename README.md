@@ -267,7 +267,7 @@ Rev 2 is the second hardware revision of the ESP32 Flight Controller. The comple
 
 <p align="center">
   <a href="https://www.nextpcb.com">
-    <img src="./Rev2/Images/nextpcb-logo.jpg" width="420" alt="NextPCB Logo">
+    <img src="./Rev2/Images/nextpcb-logo.png" width="420" alt="NextPCB Logo">
   </a>
 </p>
 
