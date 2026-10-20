@@ -169,26 +169,25 @@ LiPo Battery
 
 # Repository Structure
 
-```
+```text
 ESP32-Flight-Controller
-│
-├── Hardware
-│   ├── flight_controller.kicad_pro
-│   ├── flight_controller.kicad_sch
-│   ├── flight_controller.kicad_pcb
-│
-├── Gerbers
-│
-├── Images
-│   ├── PCB_Top.png
-│   ├── PCB_Bottom.png
-│   ├── 3D_Top.png
-│   ├── 3D_Bottom.png
-│   └── Schematic.png
-│
-├── BOM
-│
-└── README.md
+├── flight_controller.kicad_pro
+├── flight_controller.kicad_sch
+├── flight_controller.kicad_pcb
+├── flight_controller_BOM.csv
+├── ESP32-FLight-Controller-Gerber.zip
+├── pcb.png
+├── schematic.png
+├── 3D_front.png
+├── 3D_back.png
+├── LICENSE
+├── README.md
+└── Rev2/
+    ├── KiCad/
+    ├── Gerbers/
+    ├── BOM/
+    ├── Documentation/
+    └── Images/
 ```
 
 ---
@@ -267,16 +266,18 @@ Rev 2 is the second hardware revision of the ESP32 Flight Controller. The comple
 ### Manufacturing Support
 
 <p align="center">
-  <img src="Rev2/Images/nextpcb-logo.png" width="220">
+  <a href="https://www.nextpcb.com">
+    <img src="Rev2/Images/nextpcb-logo.jpg" width="420" alt="NextPCB">
+  </a>
 </p>
 
-A sincere thank you to NextPCB for supporting the manufacturing of the Rev 2 PCB.
+A sincere thank you to [NextPCB](https://www.nextpcb.com) for supporting the manufacturing of the Rev 2 PCB.
 
 Their support helped me take the design from KiCad to a professionally manufactured board and continue the hands-on testing and development of the project.
 
-I truly appreciate NextPCB for supporting student-led, open-source hardware projects and making opportunities like this possible.
+I truly appreciate [NextPCB](https://www.nextpcb.com) for supporting student-led, open-source hardware projects and making opportunities like this possible.
 
-**Manufacturing Partner:** NextPCB  
+**Manufacturing Partner:** [NextPCB](https://www.nextpcb.com)  
 **Sponsored Revision:** Rev 2
 
 ---
@@ -290,6 +291,10 @@ Rev2/
 ├── BOM/
 ├── Documentation/
 └── Images/
+    ├── nextpcb-logo.jpg
+    ├── flight_controller_rev2.png
+    └── flight_controller_rev2_back.png
+```
 
 # Tools Used
 
