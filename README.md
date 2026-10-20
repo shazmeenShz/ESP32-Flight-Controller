@@ -265,7 +265,7 @@ Rev 2 is the second hardware revision of the ESP32 Flight Controller. The comple
 
 ### Manufacturing Support
 
- <p align="center">
+<p align="center">
   <a href="https://www.nextpcb.com">
     <img src="./Rev2/Images/nextpcb-logo.jpg" width="420" alt="NextPCB Logo">
   </a>
@@ -293,7 +293,14 @@ Rev2/
 └── Images/
     ├── nextpcb-logo.jpg
     ├── flight_controller_rev2.png
-    └── flight_controller_rev2_back.png
+    ├── flight_controller_rev2_back.png
+    ├── kicad_layout_top_copper.png
+    ├── kicad_layout_bottom_copper.png
+    ├── assembled_board_in_hand.jpeg
+    ├── assembled_board_top_close_up.jpeg
+    ├── pcb_batch_overview.jpeg
+    ├── bare_pcb_bottom_view.jpeg
+    └── nextpcb_packaging_box.jpeg
 ```
 
 # Tools Used
@@ -324,3 +331,6 @@ Jamia Millia Islamia
 This project is released under the **MIT License**.
 
 ---
+
+
+
