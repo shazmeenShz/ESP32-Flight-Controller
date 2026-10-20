@@ -161,7 +161,7 @@ These are next hardware steps, not features of the current PCB:
 
 ## Author
 
-**Shazmeen Wasi Siddiqui**
+**Shazmeen Siddiqui**
 
 B.Tech, Electrical and Computer Engineering, Jamia Millia Islamia
 
