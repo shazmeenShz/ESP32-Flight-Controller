@@ -135,7 +135,7 @@ Open `Rev2/KiCad/flight_controller_rev2.kicad_pro` in KiCad 8. The Gerber set in
 
 <p align="center">
   <a href="https://www.nextpcb.com">
-    <img src="./Rev2/Images/nextpcb-logo.jpg" width="420" alt="NextPCB Logo">
+    <img src="./Rev2/Images/nextpcb-logo.png" width="420" alt="NextPCB Logo">
   </a>
 </p>
 
