@@ -7,7 +7,7 @@ A 4-layer ESP32 flight-controller PCB, designed in KiCad 8 and manufactured as R
 ![PCB](https://img.shields.io/badge/PCB-4--Layer-success)
 
 <p align="center">
-  <img src="./Rev2/Images/assembled_board_top_close_up.jpeg" width="720" alt="Assembled Rev 2 board">
+  <img src="./Rev2/Images/nextpcb_packaging_box.jpeg" width="720" alt="Assembled Rev 2 board">
 </p>
 
 The board is built around an **ESP32-WROOM-32E**. It takes a LiPo on an XT30, makes 5 V with an MP1584 and 3.3 V with an AMS1117, and brings out USB-C programming, an MPU-6050, GPS, and receiver headers. This repository is the hardware: schematics, PCB, Gerbers, BOM, and photos. There is no flight firmware here.
@@ -72,7 +72,7 @@ Copper is 1 oz (0.035 mm) on all four layers. The Rev 2 Gerbers name the inner l
 
 <p align="center">
   <img src="./Rev2/Images/bare_pcb_bottom_view.jpeg" width="48%" alt="Bare PCB, bottom">
-  <img src="./Rev2/Images/nextpcb_packaging_box.jpeg" width="48%" alt="NextPCB packaging">
+  <img src="./Rev2/Images/assembled_board_top_close_up.jpeg" width="48%" alt="NextPCB packaging">
 </p>
 
 KiCad renders and copper views:
