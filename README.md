@@ -1,177 +1,114 @@
 # ESP32 Flight Controller
 
-<p align="center">
-  <img src="3D_front.png" width="700">
-</p>
-
-> A custom 4-layer IoT-ready ESP32-based Flight Controller designed in KiCad 8 for UAV and robotics applications.
+A 4-layer ESP32 flight-controller PCB, designed in KiCad 8 and manufactured as Rev 2.
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![KiCad](https://img.shields.io/badge/KiCad-8.0-blue)
 ![PCB](https://img.shields.io/badge/PCB-4--Layer-success)
-![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+
+<p align="center">
+  <img src="./Rev2/Images/assembled_board_top_close_up.jpeg" width="720" alt="Assembled Rev 2 board">
+</p>
+
+The board is built around an **ESP32-WROOM-32E**. It takes a LiPo on an XT30, makes 5 V with an MP1584 and 3.3 V with an AMS1117, and brings out USB-C programming, an MPU-6050, GPS, and receiver headers. This repository is the hardware: schematics, PCB, Gerbers, BOM, and photos. There is no flight firmware here.
 
 ---
 
-# Overview
+## Hardware
 
-This project is a custom-designed 4-layer ESP32-based Flight Controller PCB developed in KiCad 8. Built around the ESP32-WROOM-32E, the board integrates power management, sensor interfaces, USB programming, and wireless connectivity capabilities, making it suitable for UAVs, robotics, and IoT-enabled embedded systems.
+| | |
+| --- | --- |
+| MCU | ESP32-WROOM-32E (Wi-Fi and Bluetooth) |
+| IMU | MPU-6050, I²C |
+| USB | Type-C, CH340C USB-UART |
+| Battery | LiPo on XT30 (J1) |
+| 5 V | MP1584 buck (U6) |
+| 3.3 V | AMS1117-3.3 (U2) |
+| Status | WS2812B and an active buzzer |
+| Buttons | BOOT (SW2) and RESET (SW1) |
+| Board | 4-layer, 1.6 mm |
+| CAD | KiCad 8 |
 
-The design follows industry-standard PCB practices, including dedicated ground and power planes, RF antenna keep-out, proper decoupling, and comprehensive Design Rule Checking (DRC), resulting in a manufacturing-ready hardware platform.
+Power path:
+
+```text
+LiPo (XT30) → MP1584 → 5 V → AMS1117-3.3 → 3.3 V → ESP32
+```
+
+Copper is 1 oz (0.035 mm) on all four layers. The Rev 2 Gerbers name the inner layers `GND` and `POWER`.
+
+### Connectors
+
+| Ref | What it is |
+| --- | --- |
+| J1 | Battery, XT30 |
+| J3 | iBUS / SBUS receiver, 1×3 |
+| J4 | PWM receiver, 1×8 |
+| J5 | Motor outputs, 1×5 |
+| J6 | GPS UART, 1×4 |
+| J9 | USB-C |
+| — | ADC battery-voltage divider |
 
 ---
 
-# Applications
+## Revisions
 
-- UAV & Drone Flight Controllers
-- IoT-enabled Robotics
-- Wireless Sensor Nodes
-- Remote Monitoring Systems
-- Autonomous Embedded Platforms
-- Research & Academic Projects
-- Rapid Prototyping for Embedded Systems
+**Rev 1** is the first design, in the repository root (`flight_controller.kicad_sch`, `flight_controller.kicad_pcb`, `flight_controller_BOM.csv`, and `ESP32-FLight-Controller-Gerber.zip`).
 
----
+**Rev 2** is the board that was manufactured. Files are under `Rev2/`. Compared with the Rev 1 BOM, Rev 2 adds:
 
-# Features
-
-- ESP32-WROOM-32E Microcontroller
-- Wi-Fi & Bluetooth Enabled (ESP32)
-- IoT-Ready Embedded Hardware Platform
-- 4-Layer PCB Design
-- USB Type-C Programming Interface
-- CH340C USB-to-UART Converter
-- MP1584 Buck Converter (Battery to 5V)
-- AMS1117-3.3V Linear Regulator
-- MPU6050 6-Axis IMU Interface
-- GPS UART Interface
-- SBUS/iBUS Receiver Interface
-- Battery Voltage Monitoring
-- WS2812B Addressable RGB Status LED
-- Active Buzzer Interface
-- Boot & Reset Buttons
-- Mounting Holes
-- RF Antenna Keep-Out Zone
-- Ground and Power Copper Planes
-- DRC Clean (0 Errors, 0 Warnings)
+- USBLC6-2SC6 (U5) on USB
+- SM6T24A (D4) and a second Schottky (D5)
+- the NextPCB logo footprint on the PCB
 
 ---
 
-# Hardware Specifications
+## Rev 2 photos
 
-| Parameter | Specification |
-|-----------|---------------|
-| MCU | ESP32-WROOM-32E |
-| PCB Layers | 4 |
-| Power Input | LiPo Battery |
-| Buck Converter | MP1584 |
-| LDO Regulator | AMS1117-3.3V |
-| USB Interface | USB Type-C |
-| USB-UART | CH340C |
-| IMU | MPU6050 |
-| Receiver | SBUS / iBUS |
-| GPS | UART |
-| Battery Monitor | Voltage Divider |
-| Status Indicator | WS2812B RGB LED |
-| Buzzer | Active Buzzer |
-| CAD Software | KiCad 8 |
+<p align="center">
+  <img src="./Rev2/Images/assembled_board_in_hand.jpeg" width="48%" alt="Assembled board">
+  <img src="./Rev2/Images/pcb_batch_overview.jpeg" width="48%" alt="Manufactured panel">
+</p>
 
----
+<p align="center">
+  <img src="./Rev2/Images/bare_pcb_bottom_view.jpeg" width="48%" alt="Bare PCB, bottom">
+  <img src="./Rev2/Images/nextpcb_packaging_box.jpeg" width="48%" alt="NextPCB packaging">
+</p>
 
-# PCB Stack-Up
+KiCad renders and copper views:
 
-Layer 1
-```
-Top Signal Layer
-```
+<p align="center">
+  <img src="./Rev2/Images/flight_controller_rev2.png" width="48%" alt="Rev 2 front render">
+  <img src="./Rev2/Images/flight_controller_rev2_back.png" width="48%" alt="Rev 2 back render">
+</p>
 
-Layer 2
-```
-Ground Plane
-```
+<p align="center">
+  <img src="./Rev2/Images/kicad_layout_top_copper.png" width="48%" alt="Top copper">
+  <img src="./Rev2/Images/kicad_layout_bottom_copper.png" width="48%" alt="Bottom copper">
+</p>
 
-Layer 3
-```
-Power Plane
-```
+### Rev 1 views
 
-Layer 4
-```
-Bottom Signal Layer
-```
+<p align="center">
+  <img src="./3D_front.png" width="48%" alt="Rev 1 3D front">
+  <img src="./3D_back.png" width="48%" alt="Rev 1 3D back">
+</p>
+
+<p align="center">
+  <img src="./pcb.png" width="80%" alt="Rev 1 PCB">
+</p>
+
+<p align="center">
+  <img src="./schematic.png" width="95%" alt="Rev 1 schematic">
+</p>
 
 ---
 
-# Power Architecture
-
-```
-LiPo Battery
-      │
-      ▼
-   MP1584
- (Buck Converter)
-      │
-      ▼
-      5V
-      │
-      ▼
- AMS1117-3.3V
-      │
-      ▼
-     ESP32
-```
-
----
-
-# Interfaces
-
-| Interface | Purpose |
-|------------|---------|
-| USB Type-C | Programming & Power |
-| UART | GPS |
-| SBUS/iBUS | RC Receiver |
-| I²C | MPU6050 |
-| ADC | Battery Voltage Monitoring |
-| GPIO | WS2812B & Buzzer |
-
----
-
-# Design Highlights
-
-- Dedicated Ground Plane
-- Dedicated Power Plane
-- RF Antenna Keep-Out
-- Proper Decoupling Capacitors
-- Copper Pour Optimization
-- Manual PCB Routing
-- Differential USB Routing
-- Professional Silkscreen
-- Optimized Component Placement
-- Manufacturing Ready
-
----
-
-# Design Workflow
-
-- Component Selection
-- Schematic Design
-- ERC Verification
-- Footprint Assignment
-- PCB Layout
-- Component Placement
-- Net Class Assignment
-- Manual Routing
-- Copper Pour
-- DRC Verification
-- Gerber Generation
-
----
-
-# Repository Structure
+## What is in this repo
 
 ```text
 ESP32-Flight-Controller
-├── flight_controller.kicad_pro
+├── flight_controller.kicad_pro      Rev 1 KiCad project
 ├── flight_controller.kicad_sch
 ├── flight_controller.kicad_pcb
 ├── flight_controller_BOM.csv
@@ -183,154 +120,51 @@ ESP32-Flight-Controller
 ├── LICENSE
 ├── README.md
 └── Rev2/
-    ├── KiCad/
-    ├── Gerbers/
-    ├── BOM/
-    ├── Documentation/
-    └── Images/
+    ├── KiCad/                       schematic, PCB, NextPCB logo footprint
+    ├── Gerbers/                     copper, mask, paste, silk, edge, drill
+    ├── BOM/flight_controller_bom.csv
+    ├── Documentation/               drill map
+    └── Images/                      photos, renders, copper plots, logo
 ```
 
----
-
-# Project Status
-
-- [x] Schematic Design
-- [x] PCB Layout
-- [x] Footprint Assignment
-- [x] 4-Layer PCB
-- [x] Manual Routing
-- [x] Ground Copper Pour
-- [x] Power Copper Plane
-- [x] DRC Passed
-- [x] Manufacturing Ready
+Open `Rev2/KiCad/flight_controller_rev2.kicad_pro` in KiCad 8. The Gerber set in `Rev2/Gerbers/` is what was sent for manufacturing.
 
 ---
 
-# Images
-
-## PCB Layout
-
-<p align="center">
-  <img src="pcb.png" width="80%">
-</p>
-
----
-
-## 3D View
-
-<p align="center">
-  <img src="3D_front.png" width="48%">
-  <img src="3D_back.png" width="48%">
-</p>
-
----
-
-## Schematic
-
-<p align="center">
-  <img src="schematic.png" width="95%">
-</p>
-
----
-
-# Future Improvements
-
-- BMP280/BME280 Barometer
-- Magnetometer Support
-- Current Sensor
-- Blackbox Logging
-- CAN Interface
-- ESD Protection
-- Reverse Polarity Protection
-
----
-
-# Hardware Revisions
-
-## Rev 1
-
-The original ESP32 Flight Controller hardware design is maintained in the root of this repository. It represents the first manufactured prototype of the project.
-
-## Rev 2
-
-Rev 2 is the second hardware revision of the ESP32 Flight Controller. The complete Rev 2 design and manufacturing files are provided under the `Rev2/` directory.
-
-### Rev 2 Contents
-
-- KiCad schematic and PCB design files
-- Gerber manufacturing files
-- Bill of Materials (BOM)
-- Drill files and manufacturing documentation
-- PCB images and photographs
-
-### Manufacturing Support
+## Manufacturing support
 
 <p align="center">
   <a href="https://www.nextpcb.com">
-    <img src="./Rev2/Images/nextpcb-logo.png" width="420" alt="NextPCB Logo">
+    <img src="./Rev2/Images/nextpcb-logo.jpg" width="420" alt="NextPCB Logo">
   </a>
 </p>
 
-A sincere thank you to [NextPCB](https://www.nextpcb.com) for supporting the manufacturing of the Rev 2 PCB.
+Thank you to [NextPCB](https://www.nextpcb.com) for manufacturing the Rev 2 PCB. That support took the design from KiCad to a finished board and made the hands-on testing of this student project possible.
 
-Their support helped me take the design from KiCad to a professionally manufactured board and continue the hands-on testing and development of the project.
-
-I truly appreciate [NextPCB](https://www.nextpcb.com) for supporting student-led, open-source hardware projects and making opportunities like this possible.
-
-**Manufacturing Partner:** [NextPCB](https://www.nextpcb.com)  
-**Sponsored Revision:** Rev 2
+**Manufacturing partner:** [NextPCB](https://www.nextpcb.com)  
+**Sponsored revision:** Rev 2
 
 ---
 
-## Rev 2 Repository Structure
+## Not on this board yet
 
-```text
-Rev2/
-├── KiCad/
-├── Gerbers/
-├── BOM/
-├── Documentation/
-└── Images/
-    ├── nextpcb-logo.jpg
-    ├── flight_controller_rev2.png
-    ├── flight_controller_rev2_back.png
-    ├── kicad_layout_top_copper.png
-    ├── kicad_layout_bottom_copper.png
-    ├── assembled_board_in_hand.jpeg
-    ├── assembled_board_top_close_up.jpeg
-    ├── pcb_batch_overview.jpeg
-    ├── bare_pcb_bottom_view.jpeg
-    └── nextpcb_packaging_box.jpeg
-```
+These are next hardware steps, not features of the current PCB:
 
-# Tools Used
-
-- KiCad 8
-- ESP32-WROOM-32E
-- CH340C
-- MP1584
-- AMS1117
-- MPU6050
+- Barometer (BMP280 / BME280)
+- Magnetometer
+- Current sensor
+- Blackbox logging
+- CAN
+- Stronger input protection beyond the parts already on Rev 2
 
 ---
 
-# Author
-
-**Designed & Developed by**
+## Author
 
 **Shazmeen Wasi Siddiqui**
 
-B.Tech — Electrical & Computer Engineering
+B.Tech, Electrical and Computer Engineering, Jamia Millia Islamia
 
-Jamia Millia Islamia
+## License
 
----
-
-# License
-
-This project is released under the **MIT License**.
-
----
-
-
-
+[MIT](LICENSE)
